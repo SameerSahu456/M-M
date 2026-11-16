@@ -1,0 +1,6 @@
+{
+  "name": "Mansi & Momo",
+  "description": "An editorial luxury birthday keepsake featuring curated photography, a customizable tribute letter, milestone chapters, and an interactive guestbook salon.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

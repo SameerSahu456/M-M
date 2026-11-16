@@ -20,7 +20,7 @@ export function GuestbookSection({
       className="py-16 lg:py-24 bg-[#F2EFE9]/60 dark:bg-[#161412] border-t border-stone-200/80 dark:border-stone-800/80"
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
-        <div className="mb-12 pb-5 border-b border-stone-200 dark:border-stone-800 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div className="mb-8 sm:mb-12 pb-5 border-b border-stone-200 dark:border-stone-800 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
             <p className="text-xs uppercase tracking-widest text-[#6B655E] dark:text-[#A39A8E] mb-2">
               04. From {senderName}
@@ -35,11 +35,11 @@ export function GuestbookSection({
         </div>
 
         {/* 3-Column Editorial Wishes Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-7">
           {wishes.map((wish) => (
             <article
               key={wish.id}
-              className="bg-[#FAF8F4] dark:bg-[#1B1917] border border-stone-200/90 dark:border-stone-800 p-7 flex flex-col justify-between"
+              className="bg-[#FAF8F4] dark:bg-[#1B1917] border border-stone-200/90 dark:border-stone-800 p-6 sm:p-7 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-3 text-xs text-[#6B655E] dark:text-[#A39A8E] pb-4 border-b border-stone-200/80 dark:border-stone-800">
@@ -66,7 +66,7 @@ export function GuestbookSection({
                   onClick={() => onToggleCherish(wish.id)}
                   aria-pressed={Boolean(wish.cherished)}
                   aria-label={`Save wish ${wish.title}`}
-                  className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono-tabular border transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8A5A2B] ${
+                  className={`inline-flex items-center gap-1.5 px-4 py-2.5 sm:px-3 sm:py-1.5 text-xs font-mono-tabular border transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8A5A2B] ${
                     wish.cherished
                       ? 'border-[#8A5A2B] text-[#8A5A2B] bg-[#8A5A2B]/8 dark:border-[#D1A97A] dark:text-[#D1A97A]'
                       : 'border-stone-200 dark:border-stone-800 text-[#6B655E] dark:text-[#A39A8E] hover:border-stone-400 dark:hover:border-stone-600'

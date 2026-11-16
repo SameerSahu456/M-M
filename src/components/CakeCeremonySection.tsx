@@ -75,7 +75,7 @@ export function CakeCeremonySection({
       className="py-16 lg:py-24 border-t border-stone-200/80 dark:border-stone-800/80 bg-[#F2EFE9]/70 dark:bg-[#161412] transition-colors duration-300"
     >
       <div className="max-w-5xl mx-auto px-6 lg:px-10">
-        <div className="mb-10 pb-5 border-b border-stone-200 dark:border-stone-800 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div className="mb-8 sm:mb-10 pb-5 border-b border-stone-200 dark:border-stone-800 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
             <p className="text-xs uppercase tracking-widest text-[#6B655E] dark:text-[#A39A8E] mb-2">
               Birthday Ritual · {config.celebrationDate}
@@ -97,7 +97,7 @@ export function CakeCeremonySection({
           </p>
         </div>
 
-        <div className="bg-[#FAF8F4] dark:bg-[#1B1917] border border-stone-200/90 dark:border-stone-800 p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="bg-[#FAF8F4] dark:bg-[#1B1917] border border-stone-200/90 dark:border-stone-800 p-5 sm:p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-7 sm:gap-10 items-center">
           {/* Interactive Luxury Cake Illustration Stage */}
           <div className="lg:col-span-7 flex items-center justify-center">
             <svg
@@ -356,7 +356,7 @@ export function CakeCeremonySection({
                 <button
                   type="button"
                   onClick={onBlowCandle}
-                  className="w-full flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm font-medium bg-[#D1A97A] text-[#11100F] hover:bg-[#DFBC93] transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8A5A2B]"
+                  className="w-full flex items-center justify-center gap-2.5 px-6 py-4 sm:py-3.5 text-sm font-medium bg-[#D1A97A] text-[#11100F] hover:bg-[#DFBC93] transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8A5A2B]"
                 >
                   <Wind className="w-4 h-4" aria-hidden="true" />
                   <span>Blow Candle</span>
@@ -365,7 +365,7 @@ export function CakeCeremonySection({
                 <button
                   type="button"
                   onClick={onLightCandle}
-                  className="w-full flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm font-medium bg-[#181615] text-[#FAF8F4] hover:bg-[#312C29] transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8A5A2B]"
+                  className="w-full flex items-center justify-center gap-2.5 px-6 py-4 sm:py-3.5 text-sm font-medium bg-[#181615] text-[#FAF8F4] hover:bg-[#312C29] transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8A5A2B]"
                 >
                   <Flame className="w-4 h-4" aria-hidden="true" />
                   <span>Light Candle Again</span>
@@ -376,7 +376,7 @@ export function CakeCeremonySection({
                 <button
                   type="button"
                   onClick={onCutCake}
-                  className="w-full flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm font-medium border border-stone-300 dark:border-stone-700 text-[#181615] dark:text-[#F4EFE6] hover:border-[#8A5A2B] dark:hover:border-[#D1A97A] transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8A5A2B]"
+                  className="w-full flex items-center justify-center gap-2.5 px-6 py-4 sm:py-3.5 text-sm font-medium border border-stone-300 dark:border-stone-700 text-[#181615] dark:text-[#F4EFE6] hover:border-[#8A5A2B] dark:hover:border-[#D1A97A] transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8A5A2B]"
                 >
                   <Utensils className="w-4 h-4" aria-hidden="true" />
                   <span>Cut Cake</span>
@@ -385,7 +385,7 @@ export function CakeCeremonySection({
                 <button
                   type="button"
                   onClick={onResetCake}
-                  className="w-full flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm font-medium border border-stone-300 dark:border-stone-700 text-[#181615] dark:text-[#F4EFE6] hover:border-[#8A5A2B] dark:hover:border-[#D1A97A] transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8A5A2B]"
+                  className="w-full flex items-center justify-center gap-2.5 px-6 py-4 sm:py-3.5 text-sm font-medium border border-stone-300 dark:border-stone-700 text-[#181615] dark:text-[#F4EFE6] hover:border-[#8A5A2B] dark:hover:border-[#D1A97A] transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8A5A2B]"
                 >
                   <RotateCcw className="w-4 h-4" aria-hidden="true" />
                   <span>Reset Cake</span>

@@ -6,8 +6,8 @@ interface FooterProps {
 
 export function Footer({ config }: FooterProps) {
   return (
-    <footer className="border-t border-stone-200 dark:border-stone-800 bg-[#FAF8F4] dark:bg-[#11100F] py-12 transition-colors duration-300">
-      <div className="max-w-6xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+    <footer className="border-t border-stone-200 dark:border-stone-800 bg-[#FAF8F4] dark:bg-[#11100F] pt-10 sm:pt-12 pb-[calc(2.5rem+env(safe-area-inset-bottom))] sm:pb-12 transition-colors duration-300">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-7 md:gap-6">
         <div>
           <p className="font-editorial text-xl font-medium text-[#181615] dark:text-[#F4EFE6]">
             {config.brandTitle}
@@ -18,7 +18,7 @@ export function Footer({ config }: FooterProps) {
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-6 text-xs text-[#6B655E] dark:text-[#A39A8E]">
+        <div className="max-md:w-full max-md:pt-6 max-md:border-t max-md:border-stone-200 max-md:dark:border-stone-800 flex flex-wrap items-center max-md:justify-between gap-x-6 gap-y-3 text-xs text-[#6B655E] dark:text-[#A39A8E]">
           <a
             href="#top"
             className="hover:text-[#181615] dark:hover:text-[#F4EFE6] transition-colors whitespace-nowrap shrink-0"

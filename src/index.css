@@ -8,6 +8,13 @@
     --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   }
 
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    /* Anchor jumps land below the sticky header */
+    scroll-padding-top: 4.5rem;
+  }
+
   body {
     font-family: var(--font-sans);
     font-feature-settings: "kern" 1, "liga" 1;
@@ -56,6 +63,51 @@
 .floating-heart {
   animation: floating-heart 2.2s ease-out forwards;
   will-change: transform, opacity;
+}
+
+/* Hide the scrollbar on the mobile photo filmstrip */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile menu: the sheet fades in, then each row rises into place */
+@keyframes menu-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes menu-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.menu-overlay {
+  animation: menu-fade 0.22s ease-out both;
+}
+.menu-item {
+  animation: menu-rise 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.chapter-reveal {
+  animation: menu-rise 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Tactile press feedback on touch screens, where there is no hover */
+@media (hover: none) {
+  button:active,
+  a[class*='inline-flex']:active {
+    opacity: 0.82;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

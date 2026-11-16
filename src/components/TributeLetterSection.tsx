@@ -50,7 +50,7 @@ export function TributeLetterSection({
     <section id="letter" className="py-16 lg:py-24">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         {/* Section Title */}
-        <div className="mb-12 pb-5 border-b border-stone-200 dark:border-stone-800 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div className="mb-8 sm:mb-12 pb-5 border-b border-stone-200 dark:border-stone-800 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
             <p className="text-xs uppercase tracking-widest text-[#6B655E] dark:text-[#A39A8E] mb-2">
               01. From {config.senderName} to {config.recipientName}
@@ -65,7 +65,7 @@ export function TributeLetterSection({
         </div>
 
         {/* 70/30 Asymmetric Editorial Reading Canvas */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* 70% Reading Column */}
           <div className="lg:col-span-8">
             <div className="max-w-prose space-y-6 text-base lg:text-[17px] leading-[1.8] text-[#2F2B28] dark:text-[#D8D0C4]">
@@ -74,8 +74,8 @@ export function TributeLetterSection({
             </div>
 
             {/* Editorial Pull Quote with Top/Bottom Hairline Dividers */}
-            <blockquote className="my-12 py-8 border-t border-b border-stone-200 dark:border-stone-800 max-w-2xl">
-              <p className="font-editorial italic text-2xl lg:text-[1.85rem] leading-snug text-[#181615] dark:text-[#F4EFE6] [text-wrap:balance]">
+            <blockquote className="my-10 sm:my-12 py-7 sm:py-8 border-t border-b border-stone-200 dark:border-stone-800 max-w-2xl">
+              <p className="font-editorial italic text-[1.6rem] sm:text-2xl lg:text-[1.85rem] leading-[1.3] sm:leading-snug text-[#181615] dark:text-[#F4EFE6] [text-wrap:balance]">
                 “{config.pullQuote}”
               </p>
             </blockquote>
@@ -87,7 +87,7 @@ export function TributeLetterSection({
 
           {/* 30% Margin Dedication Card & Birthday Candle Ritual */}
           <aside className="lg:col-span-4 space-y-8">
-            <div className="bg-[#F2EFE9] dark:bg-[#1A1816] border border-stone-200/90 dark:border-stone-800 p-7 transition-colors duration-300">
+            <div className="bg-[#F2EFE9] dark:bg-[#1A1816] border border-stone-200/90 dark:border-stone-800 p-6 sm:p-7 transition-colors duration-300">
               {/* Minimalist Interactive Birthday Candle Visual */}
               <div className="pb-6 mb-6 border-b border-stone-200 dark:border-stone-800 flex flex-col items-center text-center">
                 <svg
@@ -209,7 +209,7 @@ export function TributeLetterSection({
                   type="button"
                   onClick={onToggleCandle}
                   aria-pressed={candleLit}
-                  className={`w-full flex items-center justify-between px-4 py-3 text-sm font-medium transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8A5A2B] ${
+                  className={`w-full flex items-center justify-between px-4 py-3.5 sm:py-3 text-sm font-medium transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8A5A2B] ${
                     candleLit
                       ? 'bg-[#D1A97A] text-[#11100F] hover:bg-[#DFBC93]'
                       : 'bg-[#181615] text-[#FAF8F4] hover:bg-[#312C29]'
@@ -232,7 +232,7 @@ export function TributeLetterSection({
                   <button
                     type="button"
                     onClick={handleSendLove}
-                    className="w-full flex items-center justify-between px-4 py-3 text-sm font-medium border border-stone-300 dark:border-stone-700 text-[#181615] dark:text-[#F4EFE6] hover:border-[#8A5A2B] dark:hover:border-[#C69C6D] transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8A5A2B]"
+                    className="w-full flex items-center justify-between px-4 py-3.5 sm:py-3 text-sm font-medium border border-stone-300 dark:border-stone-700 text-[#181615] dark:text-[#F4EFE6] hover:border-[#8A5A2B] dark:hover:border-[#C69C6D] transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8A5A2B]"
                   >
                     <span className="inline-flex items-center gap-2.5">
                       <Heart className="w-4 h-4 fill-current text-[#8A5A2B] dark:text-[#D1A97A]" aria-hidden="true" />

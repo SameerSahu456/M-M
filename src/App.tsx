@@ -62,6 +62,10 @@ export default function App() {
     } else {
       document.documentElement.classList.remove('dark');
     }
+    // Keep the mobile browser chrome in step with the room's light
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute('content', candleLit ? '#11100F' : '#FAF8F4');
   }, [candleLit]);
 
   useEffect(() => {
@@ -144,6 +148,7 @@ export default function App() {
     <div className="min-h-screen flex flex-col bg-[#FAF8F4] text-[#181615] dark:bg-[#11100F] dark:text-[#F4EFE6] transition-colors duration-300">
       <Header
         brandTitle={config.brandTitle}
+        tagline={`From ${config.senderName} to ${config.recipientName} · ${config.celebrationDate}`}
         candleLit={candleLit}
         onToggleCandle={handleToggleCandle}
       />

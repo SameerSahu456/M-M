@@ -12,7 +12,7 @@ export function TimelineSection({ chapters }: TimelineSectionProps) {
   return (
     <section id="story" className="py-16 lg:py-24">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
-        <div className="mb-12 pb-5 border-b border-stone-200 dark:border-stone-800 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div className="mb-8 sm:mb-12 pb-5 border-b border-stone-200 dark:border-stone-800 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
             <p className="text-xs uppercase tracking-widest text-[#6B655E] dark:text-[#A39A8E] mb-2">
               03. Our Timeline
@@ -22,7 +22,8 @@ export function TimelineSection({ chapters }: TimelineSectionProps) {
             </h2>
           </div>
           <p className="text-xs text-[#6B655E] dark:text-[#A39A8E]">
-            Select a chapter to read my note
+            <span className="lg:hidden">Tap a chapter to read my note</span>
+            <span className="max-lg:hidden">Select a chapter to read my note</span>
           </p>
         </div>
 
@@ -32,16 +33,19 @@ export function TimelineSection({ chapters }: TimelineSectionProps) {
             {chapters.map((chapter) => {
               const isActive = chapter.id === activeChapter?.id;
               return (
-                <button
+                <div
                   key={chapter.id}
-                  type="button"
-                  onClick={() => setSelectedId(chapter.id)}
-                  aria-expanded={isActive}
-                  className={`w-full text-left py-5 px-4 transition-colors duration-150 flex items-baseline justify-between gap-6 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8A5A2B] ${
+                  className={`transition-colors duration-150 ${
                     isActive
                       ? 'bg-[#F2EFE9] dark:bg-[#1A1816]'
                       : 'hover:bg-[#F2EFE9]/50 dark:hover:bg-[#1A1816]/50'
                   }`}
+                >
+                <button
+                  type="button"
+                  onClick={() => setSelectedId(chapter.id)}
+                  aria-expanded={isActive}
+                  className="w-full text-left py-5 px-4 flex items-baseline justify-between gap-4 sm:gap-6 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8A5A2B]"
                 >
                   <div className="flex items-baseline gap-4 min-w-0">
                     <span className="font-mono-tabular text-xs text-[#8A5A2B] dark:text-[#D1A97A] shrink-0">
@@ -60,13 +64,26 @@ export function TimelineSection({ chapters }: TimelineSectionProps) {
                     {chapter.year}
                   </span>
                 </button>
+
+                {/* Inline reflection — keeps the note beside the chapter you tapped */}
+                {isActive && (
+                  <div className="chapter-reveal lg:hidden pl-[3.15rem] pr-4 pb-6">
+                    <p className="pt-4 border-t border-stone-300/70 dark:border-stone-700/70 text-[15px] font-medium text-[#2F2B28] dark:text-[#E5DDD0] leading-relaxed mb-3">
+                      {chapter.summary}
+                    </p>
+                    <p className="font-editorial italic text-[1.2rem] leading-[1.45] text-[#4C4742] dark:text-[#C5BDB2]">
+                      {chapter.reflection}
+                    </p>
+                  </div>
+                )}
+                </div>
               );
             })}
           </div>
 
           {/* Active Chapter Reflection */}
           {activeChapter && (
-            <div className="lg:col-span-6 bg-[#F2EFE9] dark:bg-[#1A1816] border border-stone-200/90 dark:border-stone-800 p-8 lg:p-10">
+            <div className="max-lg:hidden lg:col-span-6 bg-[#F2EFE9] dark:bg-[#1A1816] border border-stone-200/90 dark:border-stone-800 p-8 lg:p-10">
               <div className="flex items-center justify-between gap-4 text-xs text-[#6B655E] dark:text-[#A39A8E] pb-4 border-b border-stone-200 dark:border-stone-800">
                 <span>
                   Chapter {activeChapter.index} <span aria-hidden="true">·</span>{' '}
